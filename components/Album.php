@@ -88,8 +88,9 @@ class Album extends ComponentBase
 
     public function onRender()
     {
+
         $album = new Albums;
-        $this->album = $this->page['album'] = $album->where('id', '=', $this->property('idAlbum'))->first();
+        $this->album = $this->page['album'] = $album->where('id', '=', $this->property('idAlbum'))->where('status', '1')->first();
 
         foreach ($this->getProperties() as $key => $value) {
             $this->page[$key] = $value;
