@@ -1,4 +1,4 @@
-title: fes.ticker::lang.plugin.name
+title: fes.album::lang.plugin.name
 modelClass: Fes\Album\Models\Album
 nameFrom: name
 toolbar:
