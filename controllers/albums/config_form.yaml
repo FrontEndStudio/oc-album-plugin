@@ -1,0 +1,32 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: fes.album::lang.idalbum.title
+
+# Model Form Field configuration
+# form: @/plugins/fes/album/models/album/fields.yaml
+form: $/fes/album/models/album/fields.yaml
+
+# Model Class name
+modelClass: Fes\Album\Models\Album
+
+# Default redirect location
+defaultRedirect: fes/album/albums
+
+# Create page
+create:
+    title: fes.album::lang.form.create
+    redirect: fes/album/albums/update/:id
+    redirectClose: fes/album/albums
+
+# Update page
+update:
+    title: fes.album::lang.form.update
+    redirect: fes/album/albums
+    redirectClose: fes/album/albums
+
+# Preview page
+preview:
+    title: fes.album::lang.form.preview

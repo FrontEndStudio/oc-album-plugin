@@ -1,0 +1,47 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# List Title
+title: fes.album::lang.form.manage
+
+# Model Class name
+modelClass: Fes\Album\Models\Album
+
+# Model List Column configuration
+# list: @/plugins/fes/album/models/album/columns.yaml
+list: $/fes/album/models/album/columns.yaml
+
+# Link URL for each record
+recordUrl: fes/album/albums/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Displays the list column set up button
+showSetup: true
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: sort_order
+    direction: desc
+
+# Records to display per page
+recordsPerPage: 30
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+showTree: false

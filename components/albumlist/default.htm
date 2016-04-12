@@ -1,0 +1,26 @@
+{% set records = __SELF__.records %}
+{% set noRecordsMessage = __SELF__.noRecordsMessage %}
+{% set extraData = __SELF__.extraData %}
+
+{% if records.count == 0 %}
+    <strong>{{ noRecordsMessage }}</strong>
+{% endif %}
+
+{% for record in records %}
+
+    {% if loop.first %}
+        <div class="gallery_overview">
+    {% endif %}
+
+    <div class="gallery-outer" style="background-image: url('')">
+        <a href="{{ record.url }}" title="{{ record.name }}">
+            <div class="gallery-inner">
+                <div class="gallery-text">{{ record.name }}<br>{{ record.album_date | date("d M Y", "Europe/Amsterdam") }}</div>
+            </div>
+        </a>
+    </div>
+
+    {% if loop.last %}
+        </div>
+    {% endif %}
+{% endfor %}

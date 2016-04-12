@@ -1,0 +1,5 @@
+title: fes.ticker::lang.plugin.name
+modelClass: Fes\Album\Models\Album
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

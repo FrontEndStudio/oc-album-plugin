@@ -1,0 +1,33 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: fes.album::lang.modeldata.name
+        type: text
+        sortable: true
+        searchable: true
+
+    album_date:
+        label: fes.album::lang.modeldata.album_date
+        mode: date
+        span: auto
+        type: datepicker
+        sortable: true
+
+    status:
+        label: fes.album::lang.modeldata.status
+        type: number
+        sortable: true
+
+    created_at:
+        label: fes.album::lang.modeldata.created
+
+    updated_at:
+        label: fes.album::lang.modeldata.updated
+
+    sort_order:
+        label: fes.album::lang.modeldata.sort_order
+        type: number
+        sortable: true

@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: fes.album::lang.modeldata.name
+        span: full
+        type: text
+
+    album_date:
+        label: fes.album::lang.modeldata.album_date
+        span: full
+        mode: date
+        type: datepicker
+
+    status:
+        label: fes.album::lang.modeldata.status
+        span: auto
+        type: switch
+
+    images:
+        label: fes.album::lang.modeldata.images
+        type: fileupload
+        mode: image
+        imageHeight: 150
+        imageWidth: 250

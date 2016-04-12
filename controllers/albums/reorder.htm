@@ -1,0 +1,19 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('fes/album/albums') ?>"><?= e(trans('fes.album::lang.create.albums')); ?></a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <div class="layout-item stretch layout-column form-preview">
+        <?= $this->reorderRender() ?>
+    </div>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('fes/album/albums') ?>" class="btn btn-default"><?= e(trans('fes.album::lang.create.return')); ?></a></p>
+
+<?php endif ?>

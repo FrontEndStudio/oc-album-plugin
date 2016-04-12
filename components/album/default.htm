@@ -1,0 +1,32 @@
+
+
+<pre>
+idAlbum: {{ idAlbum }}
+lang: {{ lang }}
+Inect:
+inject_jquery: {{ inject_jquery }}
+inject_js: {{ inject_js }}
+inject_css: {{ inject_js }}
+
+</pre>
+
+<h1>name: {{ album.name }}</h1>
+
+<pre>
+album_date: {{ album.album_date }}
+status: {{ album.status }}
+created_at: {{ album.created_at }}
+updated_at: {{ album.updated_at }}
+sort_order: {{ album.sort_order }}
+</pre>
+
+
+<div>
+    <ul id="{{ __SELF__ }}" class="{{ __SELF__ }}">
+        {% for image in album.images %}
+            <li data-src="{{ image.path }}" data-title="{{ image.title }}" data-desc="{{ image.description }}">
+                <a href="#"><img src="{{ image.getThumb(width, height, resizer) }}" alt="{{ image.title }}" /></a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

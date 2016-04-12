@@ -1,0 +1,32 @@
+{% set record = __SELF__.record %}
+{% set notFoundMessage = __SELF__.notFoundMessage %}
+{% set modelKeyColumn = __SELF__.modelKeyColumn %}
+{% set identifierValue = __SELF__.identifierValue %}
+
+{% if record %}
+
+<h1>{{ record.name }} {{ record.album_date | date("d M Y", "Europe/Amsterdam") }}</h1>
+
+<div class="gallery_small">
+    {% for image in record.images %}
+        <div class="gallery-outer" style="background-image: url('{{ image.getThumb(440, 330, 'auto') }}')"><a href="{{ image.path }}" title="{{ image.title }}" class="fancybox-buttons" data-fancybox-group="xbutton"><div class="gallery-inner"></div></a></div>
+    {% endfor %}
+</div>
+
+<ul class="pager">
+    {% if prev.url %}
+        <li class="pager--left"><a href="{{ prev.url }}" title="{{ prev.name }}"><span>Vorig album</span></a></li>
+    {% else %}
+        <li class="pager--left-empty"></li>
+    {% endif %}
+    <li class="pager--center"><a href="/fotoalbum"><span>Terug naar index</span></a></li>
+    {% if next.url %}
+        <li class="pager--right"><a href="{{ next.url }}" title="{{ next.name }}"><span>Volgend album</span></a></li>
+    {% else %}
+        <li class="pager-right-empty"></li>
+    {% endif %}
+</ul>
+
+{% else %}
+    <strong>{{ notFoundMessage }}</strong>
+{% endif %}
