@@ -174,13 +174,13 @@ class AlbumDetails extends ComponentBase
             'sort_order'
         ];
 
-        $result = [];
+        $options = [];
 
         foreach ($columnNames as $columnName) {
-            $result[$columnName] = $columnName;
+            $options[$columnName] = $columnName;
         }
 
-        return $result;
+        return $options;
 
     }
 
@@ -251,7 +251,7 @@ class AlbumDetails extends ComponentBase
 
 
     /**
-     * Retrieve the nextAlbum
+     * Retrieve the prevAlbum
      *
      * @return mixed
      */
@@ -280,7 +280,7 @@ class AlbumDetails extends ComponentBase
     }
 
     /**
-     * Retrieve the prevAlbum
+     * Retrieve the nextAlbum
      *
      * @return mixed
      */

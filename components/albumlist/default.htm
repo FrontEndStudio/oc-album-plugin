@@ -6,13 +6,21 @@
     <strong>{{ noRecordsMessage }}</strong>
 {% endif %}
 
+{% set getThumb = '' %}
+
 {% for record in records %}
 
     {% if loop.first %}
         <div class="gallery_overview">
     {% endif %}
 
-    <div class="gallery-outer" style="background-image: url('')">
+    {% for image in record.images %}
+        {% if loop.first %}
+            {% set getThumb %}{{ image.getThumb(440, 330, 'auto') }}{% endset %}
+        {% endif %}
+    {% endfor %}
+
+    <div class="gallery-outer" style="background-image: url('{{ getThumb }}')">
         <a href="{{ record.url }}" title="{{ record.name }}">
             <div class="gallery-inner">
                 <div class="gallery-text">{{ record.name }}<br>{{ record.album_date | date("d M Y", "Europe/Amsterdam") }}</div>

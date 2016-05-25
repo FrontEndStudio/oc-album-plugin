@@ -7,6 +7,15 @@
 
 <h1>{{ record.name }} {{ record.album_date | date("d M Y", "Europe/Amsterdam") }}</h1>
 
+{% set debug %}
+    {% for image in record.images %}
+        {% if loop.first %}
+            getPath: {{ image.getPath() }} <br>
+            getLocalPath: {{ image.getLocalPath() }} <br>
+        {% endif %}
+    {% endfor %}
+{% endset %}
+
 <div class="gallery_small">
     {% for image in record.images %}
         <div class="gallery-outer" style="background-image: url('{{ image.getThumb(440, 330, 'auto') }}')"><a href="{{ image.path }}" title="{{ image.title }}" class="fancybox-buttons" data-fancybox-group="xbutton"><div class="gallery-inner"></div></a></div>

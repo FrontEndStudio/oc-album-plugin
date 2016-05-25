@@ -99,13 +99,13 @@ class AlbumList extends ComponentBase
             'sort_order'
         ];
 
-        $result = [];
+        $options = [];
 
         foreach ($columnNames as $columnName) {
-            $result[$columnName] = $columnName;
+            $options[$columnName] = $columnName;
         }
 
-        return $result;
+        return $options;
 
     }
 
